@@ -10,6 +10,9 @@ $(document).ready(function() {
         totalLoses: 0,
         randomNumber: 0,        
         crystalValues: [],
+        audioElement: "",
+        winnerSound: "assets/audio/winner.wav",
+        loserSound: "assets/audio/loser.wav",
         startGame: function() {
             var crystalValue = 0;
 
@@ -65,6 +68,9 @@ $(document).ready(function() {
                 $(".result").text("You Win!!");
                 $(".result").show();
 
+                this.audioElement.setAttribute("src", this.winnerSound);
+                this.audioElement.play();
+
                 // Restart game
                 crystalGame.startGame();
             } else if (this.totalScore > this.randomNumber) {
@@ -76,31 +82,27 @@ $(document).ready(function() {
                 $(".result").text("You Lose!!");
                 $(".result").show();
 
+                this.audioElement.setAttribute("src", this.loserSound);
+                this.audioElement.play();
+
                 // Restart game
                 crystalGame.startGame();
             }       
         }
     };
+    
+    // Create audio element
+    crystalGame.audioElement = document.createElement("audio");
 
+    // Register click event handler for the crystal images
     $(".crystal").click(function(event) {
         var crystalValue;
 
         crystalValue = $(this).data("crystalvalue");
         crystalGame.playGame(parseInt(crystalValue));
-        console.log("crystal value=" + crystalValue);
+        //console.log("crystal value=" + crystalValue);
     });
-
-    //var crystalValue = $(".crystal1").data("crystalvalue");
-    //console.log("crystal1 value=" + crystalValue);
-
-    //$(".crystal1").data( "crystalvalue", 69);
-    
-    //crystalValue = $(".crystal1").data("crystalvalue");
-    //console.log("crystal1 value=" + crystalValue);
 
     // Start game
     crystalGame.startGame();
-
-    //$(".result").text("You Win!!");
-    //$(".result").show();
 });
