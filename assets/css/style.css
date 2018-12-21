@@ -1,98 +1,122 @@
 /*
- * CSS for Unit-4-Test
+ * CSS for Star Wars
  */
+ 
+@font-face {
+  font-family: StarWars;
+  src: url(../fonts/STARWARS.woff);
+}
+
 body {
-    background-color: #4aaaa5;
-    background-image: url(../images/gravel.png);
+    font-family: 'StarWars', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 20px;
-}
-
-.header {
-    background-color: #cc7037;
+    background: url(../images/starwars5.jpg) no-repeat center center fixed; 
+    background-size: cover;
     color: #fff;
-    margin: 10px;
-    padding: 20px;
-    display: table;
- }
-
-.instructions {    
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    background-color: #c2d7ab;
-    font-size: 20px;
-    color: #cc7037;
-    line-height: 2.0;
-    font-weight: bold;
-    margin: 10px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 100px;
-    width: 560px;
-    max-width: 100%;
- }
- 
-.random {
-    background-color: green;
-    color: #000;
-    margin: 10px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 50px;
-    width: 300px;
-    height: 130px;
-    float: left;
-}
- 
-.results {
-    background-color: #fff;
-    color: #000;
-    margin: 10px;
-    padding-top: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 5px;
-    width: 130px;
-    height: 130px;
-    float: left;
+    margin-left: 10px;
 }
 
-.result {
+.title {
+   margin-right: 100px;
+   text-align: right;
+ }
+
+.headerx {
+    position: relative;
+    height: 75px;
+}
+
+.titlex {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+ }
+
+ .players {
+     display: inline-block;
+     width: auto;
+     height: auto;
+     max-width: 100%;
+ }
+
+ .player {
+     float: left;
+     background-color: #fff;
+     margin-bottom: 5px;
+     margin-right: 5px;
+     padding: 0 10px;
+ }
+
+ .enemies {
+     display: none;
+     width: auto;
+     height: auto;
+     max-width: 100%;
+ } 
+
+ .enemy {
+     float: left;
+     background-color: red;
+     margin-right: 5px;
+     padding: 0 10px;
+ }
+
+ .defenders {
+     display: none;
+     width: auto;
+     height: auto;
+     max-width: 100%;
+ }
+
+ .defender {
+    float: left;
+    background-color: #000;
+    margin-right: 5px;
+    padding: 0 10px;
+ }
+ 
+.enemyname,
+.enemyhealth {
+    font-size: 10px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+ 
+.playername,
+.playerhealth {
+    font-size: 10px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.defendername,
+.defenderhealth {
+    font-size: 10px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.playerimage:hover {
+    outline: 5px solid #000;
+    outline-offset: 1px;
+}
+
+ .enemyimage:hover {
+     outline: 5px solid #fff;
+     outline-offset: 1px;
+}
+
+.defenderimage:hover {
+    outline: 5px solid red;
+    outline-offset: 1px;
+}
+
+#replay {
     display: none;
 }
-
-.crystal {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
-.crystal:hover {
-    outline: 5px solid #cc7037;
-    outline-offset: 5px;
- }
-
-.totalscoreheader {
-    background-color: grey;
-    color: #fff;
-    margin: 10px;
-    padding-top: 5px;
-    padding-bottom: 1px;
-    padding-left: 10px;
-    padding-right: 20px;
-    width: 300px;
-    max-width: 100%;
-}
-
-.totalscorearea {
-    background-color: grey;
-    color: #fff;
-    margin: 10px;
-    padding-left: 10px;
-    padding-right: 20px;
-    padding-bottom: 50px;
-    width: 300px;
-    height: 150px;
-    max-width: 100%;
-}
-
